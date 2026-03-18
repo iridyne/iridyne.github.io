@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Iridyne — Build Relentlessly</title>
+    <meta
+      name="description"
+      content="Iridyne is an engineering-focused organization building practical open-source tools and experiments."
+    />
+    <style>
+      :root {
+        --bg: #05070f;
+        --panel: #0d1222;
+        --line: #1d2640;
+        --text: #ebf0ff;
+        --muted: #95a0bf;
+        --primary: #6b8cff;
+        --accent: #3df0c2;
+        --danger: #ff6b9f;
+        --maxw: 1120px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        background: radial-gradient(circle at 10% -10%, #1b2350 0%, var(--bg) 40%), var(--bg);
+        color: var(--text);
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      .container {
+        width: min(var(--maxw), calc(100% - 2rem));
+        margin: 0 auto;
+      }
+
+      .nav {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        backdrop-filter: blur(12px);
+        background: rgba(5, 7, 15, 0.68);
+        border-bottom: 1px solid rgba(107, 140, 255, 0.2);
+      }
+
+      .nav-inner {
+        height: 68px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.2px;
+      }
+
+      .brand-mark {
+        width: 30px;
+        aspect-ratio: 1;
+        border-radius: 9px;
+        background: linear-gradient(145deg, var(--primary), var(--accent));
+        box-shadow: 0 0 30px rgba(61, 240, 194, 0.4);
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 1.2rem;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        color: var(--muted);
+        font-weight: 500;
+      }
+
+      .nav-links a:hover {
+        color: var(--text);
+      }
+
+      .hero {
+        padding: 5.4rem 0 4rem;
+      }
+
+      .kicker {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        border: 1px solid rgba(107, 140, 255, 0.38);
+        color: #b8c6ff;
+        background: rgba(107, 140, 255, 0.12);
+        padding: 0.36rem 0.72rem;
+        border-radius: 999px;
+        font-size: 0.84rem;
+      }
+
+      h1 {
+        font-size: clamp(2.2rem, 4.5vw, 4.4rem);
+        line-height: 1.03;
+        margin: 1rem 0 1rem;
+        max-width: 12ch;
+        letter-spacing: -0.03em;
+      }
+
+      .hero p {
+        max-width: 60ch;
+        color: var(--muted);
+        line-height: 1.7;
+        font-size: 1.06rem;
+      }
+
+      .cta-row {
+        margin-top: 1.8rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+      }
+
+      .btn {
+        border: 0;
+        border-radius: 12px;
+        padding: 0.74rem 1rem;
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      .btn-primary {
+        color: #030816;
+        background: linear-gradient(140deg, var(--accent), #90f7dc);
+      }
+
+      .btn-secondary {
+        color: var(--text);
+        border: 1px solid var(--line);
+        background: rgba(19, 26, 48, 0.65);
+      }
+
+      section {
+        padding: 1.8rem 0 2.5rem;
+      }
+
+      h2 {
+        font-size: clamp(1.4rem, 2.2vw, 2.2rem);
+        margin-bottom: 0.75rem;
+      }
+
+      .section-sub {
+        color: var(--muted);
+        margin-bottom: 1.3rem;
+        line-height: 1.7;
+      }
+
+      .pillars {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1rem;
+      }
+
+      .panel {
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        background: linear-gradient(170deg, rgba(29, 38, 64, 0.65), rgba(13, 18, 34, 0.9));
+        padding: 1rem;
+      }
+
+      .panel h3 {
+        margin: 0 0 0.5rem;
+        font-size: 1.05rem;
+      }
+
+      .panel p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.66;
+      }
+
+      .repo-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1rem;
+      }
+
+      .repo-card {
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        padding: 1rem;
+        background: rgba(11, 16, 30, 0.96);
+        transition: transform 0.2s ease, border-color 0.2s ease;
+      }
+
+      .repo-card:hover {
+        transform: translateY(-3px);
+        border-color: #3952a0;
+      }
+
+      .repo-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.6rem;
+      }
+
+      .repo-name {
+        font-size: 1.05rem;
+        font-weight: 600;
+        text-decoration: none;
+      }
+
+      .repo-meta {
+        margin-top: 0.35rem;
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      .repo-desc {
+        margin-top: 0.65rem;
+        color: #cbd5f2;
+        line-height: 1.62;
+      }
+
+      .chip {
+        display: inline-flex;
+        align-items: center;
+        border-radius: 999px;
+        padding: 0.18rem 0.56rem;
+        background: rgba(61, 240, 194, 0.12);
+        color: #8ff7dd;
+        font-size: 0.78rem;
+        border: 1px solid rgba(61, 240, 194, 0.28);
+      }
+
+      .status {
+        color: var(--muted);
+        border: 1px dashed var(--line);
+        border-radius: 14px;
+        padding: 1rem;
+      }
+
+      footer {
+        padding: 2rem 0 3rem;
+        color: #8793b8;
+        border-top: 1px solid var(--line);
+      }
+
+      @media (max-width: 900px) {
+        .pillars,
+        .repo-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .nav-links {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="nav">
+      <div class="container nav-inner">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span>Iridyne</span>
+        </div>
+        <nav class="nav-links">
+          <a href="#about">About</a>
+          <a href="#repos">Repositories</a>
+          <a href="https://github.com/iridyne" target="_blank" rel="noreferrer">GitHub</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container">
+          <span class="kicker">⚡ Engineering-first organization</span>
+          <h1>Build practical tools. Ship fast. Keep improving.</h1>
+          <p>
+            Iridyne is a focused organization building open-source projects, experiments, and reusable workflows.
+            We care about pragmatic engineering, clear execution, and products that stay useful in real-world use.
+          </p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="https://github.com/iridyne" target="_blank" rel="noreferrer">Explore Organization</a>
+            <a class="btn btn-secondary" href="#repos">View Repositories</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="about">
+        <div class="container">
+          <h2>What Iridyne is about</h2>
+          <p class="section-sub">
+            A small but high-velocity builder team: we iterate in public, reduce complexity, and turn rough ideas into
+            stable, maintainable outputs.
+          </p>
+          <div class="pillars">
+            <article class="panel">
+              <h3>Design with Intent</h3>
+              <p>Bold visual direction, clear UX hierarchy, and no unnecessary clutter.</p>
+            </article>
+            <article class="panel">
+              <h3>Ship in Small Loops</h3>
+              <p>Short feedback cycles, frequent releases, and fast learning from real usage.</p>
+            </article>
+            <article class="panel">
+              <h3>Build for Reuse</h3>
+              <p>Tools and templates are made modular so others can adopt and extend quickly.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="repos">
+        <div class="container">
+          <h2>Repositories</h2>
+          <p class="section-sub">
+            Live list from the GitHub organization, with short descriptions and activity signals.
+          </p>
+          <div id="repoStatus" class="status">Loading repositories from GitHub…</div>
+          <div id="repoGrid" class="repo-grid" style="margin-top: 1rem"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">© <span id="year"></span> Iridyne · Built on GitHub Pages</div>
+    </footer>
+
+    <script>
+      const org = "iridyne";
+      const repoGrid = document.getElementById("repoGrid");
+      const repoStatus = document.getElementById("repoStatus");
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      function formatDate(dateLike) {
+        const date = new Date(dateLike);
+        if (Number.isNaN(date.getTime())) return "Unknown";
+        return date.toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" });
+      }
+
+      function el(tag, className, text) {
+        const node = document.createElement(tag);
+        if (className) node.className = className;
+        if (text) node.textContent = text;
+        return node;
+      }
+
+      function renderRepo(repo) {
+        const card = el("article", "repo-card");
+        const head = el("div", "repo-head");
+
+        const link = el("a", "repo-name", repo.name);
+        link.href = repo.html_url;
+        link.target = "_blank";
+        link.rel = "noreferrer";
+
+        head.appendChild(link);
+        if (repo.language) {
+          head.appendChild(el("span", "chip", repo.language));
+        }
+
+        const meta = el("p", "repo-meta", `★ ${repo.stargazers_count} · Updated ${formatDate(repo.updated_at)}`);
+        const desc = el(
+          "p",
+          "repo-desc",
+          repo.description || "No description yet — this repository is part of Iridyne's active workspace.",
+        );
+
+        card.append(head, meta, desc);
+        return card;
+      }
+
+      async function loadRepos() {
+        try {
+          const res = await fetch(`https://api.github.com/orgs/${org}/repos?type=public&sort=updated&per_page=100`);
+          if (!res.ok) throw new Error(`HTTP ${res.status}`);
+          const repos = await res.json();
+
+          if (!Array.isArray(repos) || repos.length === 0) {
+            repoStatus.textContent = "No public repositories found yet.";
+            return;
+          }
+
+          repoStatus.textContent = `Showing ${repos.length} public repositories from ${org}.`;
+          repoGrid.innerHTML = "";
+          repos.forEach((repo) => repoGrid.appendChild(renderRepo(repo)));
+        } catch (error) {
+          repoStatus.textContent = "Could not load repositories right now. Please visit GitHub directly.";
+          const fallback = el("a", "btn btn-secondary", "Open iridyne on GitHub");
+          fallback.href = `https://github.com/${org}`;
+          fallback.target = "_blank";
+          fallback.rel = "noreferrer";
+          fallback.style.display = "inline-block";
+          fallback.style.marginTop = "0.75rem";
+          repoStatus.appendChild(document.createElement("br"));
+          repoStatus.appendChild(fallback);
+          console.error(error);
+        }
+      }
+
+      loadRepos();
+    </script>
+  </body>
+</html>

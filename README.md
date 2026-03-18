@@ -1,11 +1,14 @@
 # iridyne.github.io
 
-Landing page for the Iridyne organization.
+Landing page for the Iridyne organization (GitHub Pages).
 
-## Temporary MP4 attachment
+## What this landing page includes
 
-- Source issue: https://github.com/iridyne/iridyne.github.io/issues/1
-- MP4 link: https://github.com/iridyne/iridyne.github.io/releases/download/temp-mp4-attachment-20260318/temp-upload.mp4
+- Bold, professional dark visual style
+- Clear organization intro section
+- Repository showcase section powered by GitHub API (`/orgs/iridyne/repos`)
+- Responsive layout for desktop/mobile
+- Graceful fallback if repository API is unavailable
 
 ## Local preview
 
@@ -16,3 +19,11 @@ python3 -m http.server 8080
 ```
 
 Then visit `http://localhost:8080`.
+
+## Deploy
+
+This repository is intended for GitHub Pages at:
+
+- `https://iridyne.github.io`
+
+Push to `main` to publish changes.
