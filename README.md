@@ -10,15 +10,27 @@ Landing page for the Iridyne organization (GitHub Pages).
 - Responsive layout for desktop/mobile
 - Graceful fallback if repository API is unavailable
 
+## Project structure
+
+- `index.html` — page structure and content blocks
+- `styles.css` — design tokens, layout, animation and responsive styles
+- `app.js` —
+  - content/data config (`CONFIG`)
+  - repository data service (retry + cache)
+  - rendering layer and interaction logic
+- `CONTRIBUTING.md` — lightweight contribution rules
+
 ## Local preview
 
-Open `index.html` directly in a browser, or run a local static server:
+Open with a local static server:
 
 ```bash
 python3 -m http.server 8080
 ```
 
-Then visit `http://localhost:8080`.
+Then visit:
+
+- `http://localhost:8080/projects/iridyne.github.io/`
 
 ## Deploy
 
