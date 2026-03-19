@@ -268,7 +268,7 @@ h1 {
 
 .metric-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0.66rem;
 }
 
@@ -408,6 +408,29 @@ h2 {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.case-line {
+  margin: 0.35rem 0 0;
+  color: #d5ddf8;
+  line-height: 1.58;
+  font-size: 0.94rem;
+}
+
+.case-line strong {
+  color: #f2f6ff;
+  font-weight: 700;
+  margin-right: 0.4rem;
+}
+
+.collab-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.collab-cta {
+  margin-top: 1.2rem;
+}
+
 .repo-card {
   border: 1px solid rgba(122, 141, 255, 0.24);
   border-radius: 16px;
@@ -545,7 +568,8 @@ footer {
   .pillars-2,
   .proof-grid,
   .repo-grid,
-  .flagship-grid {
+  .flagship-grid,
+  .collab-grid {
     grid-template-columns: 1fr;
   }
 }

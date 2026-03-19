@@ -1,14 +1,14 @@
 const CONFIG = {
   org: "iridyne",
   hero: {
-    kicker: "Applied AI Lab for real-world systems",
-    title: "Build. Ship. Validate.",
-    copy: "Iridyne builds production-minded AI systems across medical multimodal research and developer infrastructure.",
-    copyZh: "我们专注可落地 AI：医疗多模态系统 + 开发者基础设施。",
-    primaryCtaLabel: "Explore Repositories",
+    kicker: "Collaboration-first Applied AI Lab",
+    title: "Research together. Ship reliably.",
+    copy: "Iridyne collaborates with researchers and builders to turn medical multimodal ideas and developer infrastructure into reliable systems.",
+    copyZh: "我们偏向合作与研究共建，把医疗多模态与开发基础设施从实验推进到稳定落地。",
+    primaryCtaLabel: "Collaborate on GitHub",
     primaryCtaHref: "https://github.com/iridyne",
-    secondaryCtaLabel: "See Showcase",
-    secondaryCtaHref: "#repos",
+    secondaryCtaLabel: "Review Flagship Work",
+    secondaryCtaHref: "#flagship",
   },
   repos: {
     title: "Repository Showcase",
@@ -258,8 +258,10 @@ function updateProof(repos) {
   setText("signalRepoCount", `${repoCount}`);
   setText("signalStarCount", `${totalStars}`);
   setText("signalRecentCount", `${recentCount}`);
+  setText("signalTopLanguage", topLanguage);
   setText("proofRepoCount", `${repoCount}`);
-  setText("proofUpdatedAt", latest ? formatDate(latest.updated_at) : "--");
+  setText("proofRecentCount", `${recentCount}`);
+  setText("proofUpdatedRepo", latest ? latest.name : "--");
   setText("proofLanguages", topLanguage);
 }
 

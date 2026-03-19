@@ -6,9 +6,34 @@
     <title>Iridyne — Applied AI Lab</title>
     <meta
       name="description"
-      content="Iridyne is an applied AI lab building real-world systems across medical multimodal research and developer infrastructure."
+      content="Iridyne is a collaboration-first applied AI lab advancing medical multimodal research and developer infrastructure for real-world systems."
     />
+    <meta property="og:title" content="Iridyne — Collaboration-first Applied AI Lab" />
+    <meta
+      property="og:description"
+      content="Partner with Iridyne on medical multimodal systems and developer infrastructure that move from research to reliable production."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://iridyne.github.io" />
+    <meta property="og:image" content="https://iridyne.github.io/og-cover.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Iridyne — Collaboration-first Applied AI Lab" />
+    <meta
+      name="twitter:description"
+      content="Build research-backed AI systems with Iridyne: medical multimodal intelligence and engineering infrastructure."
+    />
+    <meta name="twitter:image" content="https://iridyne.github.io/og-cover.png" />
     <link rel="stylesheet" href="./styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Iridyne",
+        "url": "https://iridyne.github.io",
+        "sameAs": ["https://github.com/iridyne"],
+        "description": "Collaboration-first applied AI lab focused on medical multimodal systems and developer infrastructure."
+      }
+    </script>
   </head>
   <body>
     <div class="fx-layer" aria-hidden="true">
@@ -28,6 +53,7 @@
           <a href="#focus">Focus</a>
           <a href="#flagship">Flagship</a>
           <a href="#proof">Proof</a>
+          <a href="#collaborate">Collaborate</a>
           <a href="#repos">Repositories</a>
         </nav>
       </div>
@@ -67,6 +93,10 @@
                 <div class="metric">
                   <strong id="signalRecentCount">--</strong>
                   <span>Updated in 90 days</span>
+                </div>
+                <div class="metric">
+                  <strong id="signalTopLanguage">--</strong>
+                  <span>Top language</span>
                 </div>
               </div>
             </article>
@@ -109,24 +139,27 @@
                 <a class="repo-name" href="https://github.com/iridyne/medfusion" target="_blank" rel="noreferrer">medfusion</a>
                 <span class="chip">Medical AI</span>
               </div>
-              <p class="repo-meta">Problem: fragmented multimodal clinical signals</p>
-              <p class="repo-desc">Approach: fusion-first architecture for robust multimodal reasoning. Status: active evolution.</p>
+              <p class="case-line"><strong>Problem</strong> Fragmented multimodal clinical signals.</p>
+              <p class="case-line"><strong>Approach</strong> Fusion-first architecture for robust multimodal reasoning.</p>
+              <p class="case-line"><strong>Status</strong> Active evolution with production-oriented experiments.</p>
             </article>
             <article class="repo-card show reveal">
               <div class="repo-head">
                 <a class="repo-name" href="https://github.com/iridyne/cinnabar" target="_blank" rel="noreferrer">cinnabar</a>
                 <span class="chip">Dev Infra</span>
               </div>
-              <p class="repo-meta">Problem: privacy and latency limits in voice tooling</p>
-              <p class="repo-desc">Approach: offline-first speech pipeline with lightweight runtime. Status: active optimization.</p>
+              <p class="case-line"><strong>Problem</strong> Privacy and latency limits in voice tooling.</p>
+              <p class="case-line"><strong>Approach</strong> Offline-first speech pipeline with lightweight runtime.</p>
+              <p class="case-line"><strong>Status</strong> Active optimization for practical local deployment.</p>
             </article>
             <article class="repo-card show reveal">
               <div class="repo-head">
                 <a class="repo-name" href="https://github.com/iridyne/prism" target="_blank" rel="noreferrer">prism</a>
                 <span class="chip">Tooling</span>
               </div>
-              <p class="repo-meta">Problem: inconsistent build and iteration workflows</p>
-              <p class="repo-desc">Approach: pragmatic tooling layer for repeatable engineering loops. Status: active updates.</p>
+              <p class="case-line"><strong>Problem</strong> Inconsistent build and iteration workflows.</p>
+              <p class="case-line"><strong>Approach</strong> Pragmatic tooling layer for repeatable engineering loops.</p>
+              <p class="case-line"><strong>Status</strong> Actively updated around team execution quality.</p>
             </article>
           </div>
         </div>
@@ -144,13 +177,40 @@
               <p>Selected repositories in showcase</p>
             </div>
             <div class="panel">
-              <h3 id="proofUpdatedAt">--</h3>
-              <p>Most recent repository update</p>
+              <h3 id="proofRecentCount">--</h3>
+              <p>Repositories updated in 90 days</p>
+            </div>
+            <div class="panel">
+              <h3 id="proofUpdatedRepo">--</h3>
+              <p>Most recently shipped repository</p>
             </div>
             <div class="panel">
               <h3 id="proofLanguages">--</h3>
               <p>Top language in active set</p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="collaborate">
+        <div class="container">
+          <h2 class="reveal">Collaborate with Iridyne</h2>
+          <p class="section-sub reveal">
+            We work with research teams and builders who need rigorous experimentation plus reliable engineering delivery.
+          </p>
+          <div class="collab-grid reveal">
+            <article class="panel">
+              <h3>Research Collaboration</h3>
+              <p>Co-develop multimodal methods, benchmark design, and reproducible experiment pipelines.</p>
+            </article>
+            <article class="panel">
+              <h3>Engineering Collaboration</h3>
+              <p>Build and harden practical AI systems with clear constraints, metrics, and handoff quality.</p>
+            </article>
+          </div>
+          <div class="cta-row collab-cta reveal">
+            <a class="btn btn-primary" href="https://github.com/iridyne" target="_blank" rel="noreferrer">Collaborate on GitHub</a>
+            <a class="btn btn-secondary" href="#flagship">Review Flagship Work</a>
           </div>
         </div>
       </section>
@@ -173,7 +233,7 @@
       </section>
     </main>
 
-    <a id="stickyCta" class="sticky-cta" href="https://github.com/iridyne" target="_blank" rel="noreferrer">Explore Repos</a>
+    <a id="stickyCta" class="sticky-cta" href="https://github.com/iridyne" target="_blank" rel="noreferrer">Collaborate</a>
 
     <footer>
       <div class="container">© <span id="year"></span> Iridyne · Applied AI Lab</div>
