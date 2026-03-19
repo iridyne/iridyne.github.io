@@ -1,41 +1,32 @@
 # iridyne.github.io
 
-Landing page for the Iridyne organization (GitHub Pages).
+Official landing page for the Iridyne organization.
 
-## What this landing page includes
+## Overview
 
-- Bold, professional dark visual style
-- Clear organization intro section
-- Repository showcase section powered by GitHub API (`/orgs/iridyne/repos`)
-- Responsive layout for desktop/mobile
-- Graceful fallback if repository API is unavailable
+This repository contains the static site served at:
 
-## Project structure
+- `https://iridyne.github.io`
 
-- `index.html` — page structure and content blocks
-- `styles.css` — design tokens, layout, animation and responsive styles
-- `app.js` —
-  - content/data config (`CONFIG`)
-  - repository data service (retry + cache)
-  - rendering layer and interaction logic
-- `CONTRIBUTING.md` — lightweight contribution rules
+## Structure
 
-## Local preview
+- `index.html` — page structure
+- `styles.css` — styles and responsive layout
+- `app.js` — client-side logic and dynamic content loading
+- `CONTRIBUTING.md` — contribution guidelines
 
-Open with a local static server:
+## Development
+
+Run a local static server from the repository root:
 
 ```bash
 python3 -m http.server 8080
 ```
 
-Then visit:
+Then open:
 
-- `http://localhost:8080/projects/iridyne.github.io/`
+- `http://localhost:8080`
 
-## Deploy
+## Deployment
 
-This repository is intended for GitHub Pages at:
-
-- `https://iridyne.github.io`
-
-Push to `main` to publish changes.
+Push changes to `main` to publish via GitHub Pages.
