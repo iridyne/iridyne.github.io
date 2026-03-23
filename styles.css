@@ -427,6 +427,53 @@ h2 {
   gap: 0.9rem;
 }
 
+.advantage-grid,
+.process-grid,
+.faq-list {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.advantage-grid,
+.process-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.step-card {
+  position: relative;
+  border-radius: 18px;
+  border: 1px solid rgba(122, 141, 255, 0.27);
+  background: linear-gradient(170deg, rgba(19, 27, 54, 0.86), rgba(9, 13, 28, 0.95));
+  padding: 1.1rem;
+}
+
+.step-index {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 48px;
+  height: 30px;
+  padding: 0 0.7rem;
+  border-radius: 999px;
+  margin-bottom: 0.8rem;
+  border: 1px solid rgba(49, 228, 197, 0.38);
+  background: rgba(49, 228, 197, 0.12);
+  color: #98f5e3;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.step-card h3 {
+  margin: 0 0 0.45rem;
+}
+
+.step-card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.68;
+}
+
 .collab-cta {
   margin-top: 1.2rem;
 }
@@ -569,7 +616,10 @@ footer {
   .proof-grid,
   .repo-grid,
   .flagship-grid,
-  .collab-grid {
+  .collab-grid,
+  .advantage-grid,
+  .process-grid,
+  .faq-list {
     grid-template-columns: 1fr;
   }
 }
@@ -584,17 +634,60 @@ footer {
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .fx-orb,
-  .brand-mark,
-  .gradient-text {
-    animation: none;
-  }
+.testimonial-grid,
+.case-grid,
+.social-strip {
+  display: grid;
+  gap: 0.9rem;
+}
 
-  .reveal,
-  .repo-card,
-  .btn,
-  .hero-card {
-    transition: none;
+.testimonial-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.case-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.social-strip {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-bottom: 1rem;
+}
+
+.signal-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 999px;
+  border: 1px solid rgba(122, 141, 255, 0.34);
+  background: rgba(122, 141, 255, 0.12);
+  color: #d4ddff;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0.48rem 0.7rem;
+}
+
+.quote-card p {
+  color: #dce4ff;
+  font-style: italic;
+}
+
+.quote-card span {
+  display: inline-block;
+  margin-top: 0.72rem;
+  color: #aeb8d8;
+  font-size: 0.85rem;
+}
+
+.case-card h3 {
+  margin-bottom: 0.55rem;
+}
+
+@media (max-width: 980px) {
+  .testimonial-grid,
+  .case-grid,
+  .social-strip {
+    grid-template-columns: 1fr;
   }
 }
